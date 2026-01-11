@@ -90,7 +90,7 @@ func teaHandler(rdb *redis.Client, db *DB) func(ssh.Session) (tea.Model, []tea.P
 		}
 
 		m := initialModel(s, rdb, db, pty.Window.Width, pty.Window.Height)
-		return m, []tea.ProgramOption{tea.WithAltScreen()}
+		return &m, []tea.ProgramOption{tea.WithAltScreen()}
 	}
 }
 
